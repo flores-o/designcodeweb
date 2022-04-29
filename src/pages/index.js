@@ -7,7 +7,7 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <HeroSection/>
+      <HeroSection />
     </Layout>
   )
 }
