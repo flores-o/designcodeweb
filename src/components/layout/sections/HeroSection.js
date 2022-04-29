@@ -9,10 +9,10 @@ function HeroSection() {
         <ContentWrapper>
           <TextWrapper>
             <img src="/images/logos/logo.svg" alt="logo" />
-            <h1>Hi people</h1>
-            <p>
+            <Title>Hi people</Title>
+            <Description>
               Welcome to your new Gatsby site.
-            </p>
+            </Description>
           </TextWrapper>
           <Link to="/page-2/"> Go to page 2 </Link> <br />
         </ContentWrapper>
@@ -33,5 +33,14 @@ const ContentWrapper = styled.div`
 `
 const TextWrapper = styled.div`
   max-width: 360px;
+`
+const Title = styled.h1`
+  font-weight: bold;
+  font-size: 60px;
+	color: white;
+`
+const Description = styled.p`
+	font-size: 17px;
+	line-height: 130%;
 `
 export default HeroSection
