@@ -50,10 +50,6 @@ const TextWrapper = styled.div`
   max-width: 360px;
   display: grid;
   gap: 30px;
-`
-const Title = styled(H1)`
-  color: ${themes.dark.text1};
-  opacity:0;
   > * {
     opacity: 0;
     animation: ${animation} 1s 0.1s forwards;
@@ -68,6 +64,9 @@ const Title = styled(H1)`
       animation: ${animation} 1s 0.6s forwards;
     }
   }
+`
+const Title = styled(H1)`
+  color: ${themes.dark.text1};
   `
 
 const Description = styled(MediumText)``
