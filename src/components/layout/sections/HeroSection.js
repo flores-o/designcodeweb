@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { H1, MediumText } from "../../styles/TextStyles"
-import themes from "../../styles/ColorStyles"
+import { themes } from "../../styles/ColorStyles"
 
 function HeroSection() {
   return (
