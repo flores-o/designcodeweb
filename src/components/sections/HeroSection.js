@@ -13,7 +13,6 @@ function HeroSection() {
         <WaveBackground/>
         <ContentWrapper>
           <TextWrapper>
-            <img src="/images/logos/logo.svg" alt="logo" />
             <Title>Design <br />
               and code React apps</Title>
             <Description>
@@ -45,6 +44,13 @@ const ContentWrapper = styled.div`
 	margin: 0 auto;
   display: grid;
   grid-template-columns: 360px auto;
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
+    padding: 150px 20px 250px;
+    gap: 60px;
+  }
+
 `
 const TextWrapper = styled.div`
   max-width: 360px;
@@ -67,6 +73,10 @@ const TextWrapper = styled.div`
 `
 const Title = styled(H1)`
   color: ${themes.dark.text1};
+  background: linear-gradient(180deg, #730040 0%, #301cbe 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   `
 
 const Description = styled(MediumText)``
