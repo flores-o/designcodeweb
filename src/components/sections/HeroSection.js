@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { H1, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import PurchaseButton from "../buttons/PurchaseButton"
+import MockupAnimation from "../animations/MockupAnimations"
+
 function HeroSection() {
   return (
     <>
@@ -19,6 +21,7 @@ function HeroSection() {
             </Description>
             <PurchaseButton title="This is props.title" subtitle="This is props.subtitle from the button component" />
           </TextWrapper>
+          <MockupAnimation/>
         </ContentWrapper>
       </Wrapper>
     </>
