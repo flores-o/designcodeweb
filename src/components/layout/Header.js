@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState }  from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { menuData } from "../data/menuData"
@@ -6,6 +6,7 @@ import MenuButton from "../buttons/MenuButton"
 import MenuTooltip from "../tooltips/MenuTooltip"
 
 export default function Header() {
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <>
             <Wrapper>
@@ -14,10 +15,14 @@ export default function Header() {
                 </Link>
                 <MenuWrapper count={menuData.length}>
                     {menuData.map((item, index) => (
-                        <MenuButton key={index} item={item} />
+                        item.link === "/account" ? (
+                            <MenuButton item={item} key={index} onClick={() => setIsOpen(!isOpen)}/>
+                          ) : (
+                            <MenuButton key={index} item={item} />
+                          )
                     ))}
                 </MenuWrapper>
-                <MenuTooltip />
+                <MenuTooltip isOpen={isOpen}/>
             </Wrapper>
         </>
     )
