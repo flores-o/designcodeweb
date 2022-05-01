@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { H1, MediumText } from "../styles/TextStyles"
 import { themes } from "../styles/ColorStyles"
 import PurchaseButton from "../buttons/PurchaseButton"
@@ -30,8 +29,14 @@ function HeroSection() {
   )
 }
 
+
+const animation = keyframes`
+  from { opacity: 0; transform: translateY(-10px); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0px); filter: blur(0px); }
+`
+
 const Wrapper = styled.div`
-overflow: hidden;
+  overflow: hidden;
 `
 
 const ContentWrapper = styled.div`
@@ -46,7 +51,24 @@ const TextWrapper = styled.div`
   display: grid;
   gap: 30px;
 `
-const Title = styled(H1)`color: ${themes.dark.text1}`
+const Title = styled(H1)`
+  color: ${themes.dark.text1};
+  opacity:0;
+  > * {
+    opacity: 0;
+    animation: ${animation} 1s 0.1s forwards;
+
+    :nth-child(1) {
+      animation: ${animation} 1s 0s forwards;
+    }
+    :nth-child(2) {
+      animation: ${animation} 1s 0.4s forwards;
+    }
+    :nth-child(3) {
+      animation: ${animation} 1s 0.6s forwards;
+    }
+  }
+  `
 
 const Description = styled(MediumText)``
 
