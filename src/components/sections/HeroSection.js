@@ -21,7 +21,7 @@ function HeroSection() {
             </Description>
             <PurchaseButton title="This is props.title" subtitle="This is props.subtitle from the button component" />
           </TextWrapper>
-          <MockupAnimation/>
+          <MockupAnimation />
         </ContentWrapper>
       </Wrapper>
     </>
@@ -32,12 +32,15 @@ const Wrapper = styled.div`
 background: linear-gradient(180deg,
   #4316DB 0%,
   #9076E7 100%);
+overflow: hidden;
 `
 
 const ContentWrapper = styled.div`
 	max-width: 1234px;
 	padding: 200px 30px;
 	margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px auto;
 `
 const TextWrapper = styled.div`
   max-width: 360px;

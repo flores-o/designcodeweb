@@ -46,6 +46,7 @@ const Wrapper = styled.div`
   .icon {
     transform: scale(1.2);
   }
+  overflow: hidden;
 }
 
 `
