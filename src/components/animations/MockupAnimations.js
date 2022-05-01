@@ -13,6 +13,43 @@ export default function MockupAnimation() {
 
 const Wrapper = styled.div`
   position: relative;
+  perspective: 5000;
+
+  div {
+    transform: rotateY(-20deg) rotateX(20deg);
+    transform-origin: bottom left;
+
+  }
+
+  * {
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  :hover div {
+    filter: brightness(150%) saturate(120%);
+
+    transform: rotateX(0deg) rotateY(0deg);
+    &.mockup1 {
+        transform: translate(-30px, -30px);
+        transition-delay: 0.1s;
+      }
+      &.mockup2 {
+        transform: translate(0, -30px);
+        transition-delay: 0.2s;
+      }
+      &.mockup3 {
+        transition-delay: 0s;
+      }
+      &.mockup4 {
+        transform: translate(-120px, 30px);
+        transition-delay: 0.1s;
+      }
+      &.mockup5 {
+        transform: translate(-90px, 30px);
+        transition-delay: 0.2s;
+      }
+
+  }
 
   .mockup1 {
     position: absolute;
@@ -20,6 +57,7 @@ const Wrapper = styled.div`
     height: 120px;
     left: 0;
     top: 0px;
+
 
     background: url("/images/animations/mockup1.svg"),
     radial-gradient(
@@ -106,4 +144,7 @@ const Wrapper = styled.div`
 
     border-radius: 14px;
   }
+
+
+
 `
