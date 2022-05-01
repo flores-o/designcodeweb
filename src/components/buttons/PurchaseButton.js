@@ -6,13 +6,16 @@ import { Link } from "gatsby"
 export default function PurchaseButton(props) {
   return (
     <Link to="/page-2">
-    <Wrapper>
-    <IconWrapper>
-              <Icon src="/images/icons/credit.svg" />
-            </IconWrapper>
-      <Title>{props.title || "default props title"}</Title>
-      <Subtitle>{props.subtitle || "default props subtitle"}</Subtitle>
-    </Wrapper>
+      <Wrapper>
+        <IconWrapper>
+          <Icon src="/images/icons/credit.svg" />
+          <Ring src="/images/icons/icon-ring.svg" />
+        </IconWrapper>
+        <TextWrapper>
+          <Title>{props.title || "default props title"}</Title>
+          <Subtitle>{props.subtitle || "default props subtitle"}</Subtitle>
+        </TextWrapper>
+      </Wrapper>
     </Link>
   )
 }
@@ -27,6 +30,14 @@ const Wrapper = styled.div`
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   border: 0px;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+`
+
+const TextWrapper = styled.div`
+  display: grid;
+  gap: 4px;
 `
 
 const Title = styled(Caption2)`color:black;`
@@ -43,8 +54,15 @@ const IconWrapper = styled.div`
   display: grid;
   justify-content: center;
   align-content: center;
+  position: relative;
 `
 const Icon = styled.img`
   width: 29px;
   height: 29px;
+`
+
+const Ring = styled.img`
+  position: absolute;
+  top: -15px;
+  left: -16px;
 `

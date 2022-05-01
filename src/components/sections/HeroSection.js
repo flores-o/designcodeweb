@@ -28,7 +28,8 @@ function HeroSection() {
 const Wrapper = styled.div`
 background: linear-gradient(180deg,
   #4316DB 0%,
-  #9076E7 100%);`
+  #9076E7 100%);
+`
 
 const ContentWrapper = styled.div`
 	max-width: 1234px;
