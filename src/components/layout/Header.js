@@ -10,7 +10,7 @@ export default function Header() {
                 <img src="/images/logos/logo.svg" />
                 <MenuWrapper>
                     {menuData.map((item, index) => (
-                        <MenuItem>
+                        <MenuItem title={item.title}>
                             <Link to={item.link} key={index}>
                                 <img src={item.icon} alt={item.title} />
                                 {item.title} </Link>
@@ -25,11 +25,11 @@ export default function Header() {
 const Wrapper = styled.div`
   position: absolute;
   top: 60px;
-	grid-template-columns: 44px auto;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	padding: 0 30px;
+  grid-template-columns: 44px auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
 `
 
 const MenuWrapper = styled.div`
@@ -43,7 +43,7 @@ const MenuItem = styled.div`
   color: rgba(255, 255, 255, 0.7);
   display: grid;
   grid-template-columns: 24px auto;
-  gap: 10px;
+  gap: ${props => (props.title ? "10px" : "0px")};
   align-items: center;
   padding: 10px;
   border-radius: 10px;
